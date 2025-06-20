@@ -1,0 +1,5 @@
+O visual Simple Image não aceita mais links do Google Drive. 
+
+Portanto na base de imagens você encontrará links de um site chamado IMGBB, que vamos mostrar na aula seguinte como obtê-los. 😉
+
+Lembrando que isso não altera em nada a lógica de utilização e construção do Dashboard ✌️

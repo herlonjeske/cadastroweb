@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Cadastro de Atendimentos</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Sistema de Gestão de Atendimentos</h1>
+            <p>Controle completo de vendas e produtividade</p>
+        </div>
+
+        <div class="form-section">
+            <div class="form-container">
+                <h2 class="form-title">Cadastro de Atendimento</h2>
+                
+                <div class="success-message" id="successMessage">
+                    Atendimento cadastrado com sucesso!
+                </div>
+
+                <form id="atendimentoForm">
+                    <div class="form-group">
+                        <label for="atendente">Atendente:</label>
+                        <select id="atendente" required>
+                            <option value="">Selecione o atendente</option>
+                            <option value="Ana Silva">Ana Silva</option>
+                            <option value="Carlos Santos">Carlos Santos</option>
+                            <option value="Maria Oliveira">Maria Oliveira</option>
+                            <option value="João Pereira">João Pereira</option>
+                            <option value="Fernanda Costa">Fernanda Costa</option>
+                            <option value="Ricardo Lima">Ricardo Lima</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="cliente">Cliente:</label>
+                        <input type="text" id="cliente" placeholder="Nome do cliente" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="data">Data:</label>
+                        <input type="date" id="data" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="valor">Valor Negociado:</label>
+                        <div class="currency-input">
+                            <input type="number" id="valor" step="0.01" min="0" placeholder="0,00" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="aceite">Aceite da Proposta:</label>
+                        <select id="aceite" required>
+                            <option value="">Selecione</option>
+                            <option value="Sim">Sim</option>
+                            <option value="Não">Não</option>
+                        </select>
+                    </div>
+
+                    <div class="button-group">
+                        <button type="submit" class="btn btn-primary">
+                            📝 Gravar Atendimento
+                        </button>
+                        <button type="button" class="btn btn-secondary" onclick="limparDados()">
+                            🗑️ Limpar Dados
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="dashboards-section">
+            <h2 class="dashboards-title">Dashboards de Performance</h2>
+            
+            <div class="dashboards-container">
+                <div class="dashboard-card produtividade">
+                    <div class="dashboard-header">
+                        <div class="dashboard-icon">📊</div>
+                        <div class="dashboard-title">Produtividade</div>
+                    </div>
+                    <div class="dashboard-content" id="produtividadeChart">
+                        <div class="no-data">Nenhum dado disponível ainda</div>
+                    </div>
+                </div>
+
+                <div class="dashboard-card reversao">
+                    <div class="dashboard-header">
+                        <div class="dashboard-icon">💰</div>
+                        <div class="dashboard-title">Reversão</div>
+                    </div>
+                    <div class="dashboard-content" id="reversaoChart">
+                        <div class="no-data">Nenhum dado disponível ainda</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="export-section">
+                <a href="#" class="btn-export" onclick="exportarCSV()">
+                    📥 Exportar Dados CSV
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
